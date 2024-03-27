@@ -2,21 +2,37 @@
 <html>
   <head>
     <title>Calculadora CELP</title>
-    <style>
-      /* Add CSS styles for the calculator layout */
-    </style>
+    <style></style>
   </head>
   <body>
-    <h1>Ingrese su consumo:</h1>
-    <input type="number" id="inputNumber" />
-    <button onclick="multiplyBy100()">Multiply by 100</button>
-    <p id="result"></p>
+    <h1>Calculadora de Consumos</h1>
+    <select id="categoria">
+      <option value="residencial">Residencial</option>
+      <option value="comercial">Comercial</option>
+      <option value="tarifa-social">Tarifa Social</option>
+    </select>
+    <input type="number" id="consumo" min="0" max="99999" />
+    <button onclick="calcularConsumo()">Calcular</button>
+    <p id="total"></p>
+
+    asdadasd
+
+    <script>
+      function calcularConsumo() {
+        var categoria = document.getElementById("categoria").value;
+        var consumo = document.getElementById("consumo").value;
+        var resultado;
+
+        if (categoria === "residencial") {
+          resultado = consumo * 10;
+        } else if (categoria === "conercial") {
+          resultado = consumo * 20;
+        } else if (categoria === "tarifa-social") {
+          resultado = consumo * 30;
+        }
+
+        document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+      }
+    </script>
   </body>
-  <script>
-    function multiplyBy100() {
-      var input = document.getElementById("inputNumber").value;
-      var result = input * 100;
-      document.getElementById("result").innerHTML = "Result: " + result;
-    }
-  </script>
 </html>
