@@ -21,12 +21,31 @@
         var consumo = document.getElementById("consumo").value;
         var resultado;
 
+        const precioTarifaSocial50 = 5;
+        const precioTarifaSocial100 = 10;
+        const precioResidencial50 = 10;
+        const precioResidencial100 = 15;
+        const precioComercial50 = 15;
+        const precioComercial100 = 20;
+
         if (categoria === "residencial") {
-          resultado = consumo * 10;
+          if (consumo < 50) {
+            resultado = consumo * precioResidencial50;
+          } else {
+            resultado = consumo * precioResidencial100;
+          }
         } else if (categoria === "comercial") {
-          resultado = consumo * 20;
+          if (consumo < 50) {
+            resultado = consumo * precioComercial50;
+          } else {
+            resultado = consumo * precioComercial100;
+          }
         } else if (categoria === "tarifa-social") {
-          resultado = consumo * 30;
+          if (consumo < 50) {
+            resultado = consumo * precioTarifaSocial50;
+          } else {
+            resultado = consumo * precioTarifaSocial100;
+          }
         }
 
         document.getElementById("total").innerHTML = "Total: " + resultado;
