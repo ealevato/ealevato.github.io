@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora CELP</title>
     <style></style>
   </head>
@@ -14,6 +16,22 @@
     <input type="number" id="consumo" min="0" max="99999" />
     <button onclick="calcularConsumo()">Calcular</button>
     <p id="total"></p>
+    <pre id="output"></pre>
+
+    <p id="test-csv"></p>
+    <table id="tarifas-table">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>ConsumoDesde</th>
+          <th>ConsumoHasta</th>
+          <th>PrecioCF</th>
+          <th>PrecioCV</th>
+        </tr>
+      </thead>
+      <tbody id="tarifas-body"></tbody>
+    </table>
+
     <script src="script.js"></script>
   </body>
 </html>
