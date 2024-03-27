@@ -11,6 +11,8 @@ function parseCSV(csvData) {
 
   // console.log(jsonData);
   generateTableRows(jsonData);
+
+  return jsonData;
 }
 
 function fetchAndParseCSV() {
